@@ -35,13 +35,13 @@ describe("sort", () => {
 
   it("returns REJECTED packages that are too bulky by volume and too heavy", () => {
     expect(sort(1000001, 1, 1, 20)).toBe("REJECTED");
+    expect(sort(149.1, 101, 68, 21)).toBe("REJECTED");
   });
 
-  it("throws an error when a dimension or mass are 0", () => {
+  it("throws a RangeError when a dimension or mass are 0", () => {
     expect(() => {
       sort(0, 2, 3, 10);
     }).toThrow(RangeError);
-
     expect(() => {
       sort(1, 0, 3, 10);
     }).toThrow(RangeError);
