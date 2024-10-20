@@ -30,7 +30,7 @@ describe("sort", () => {
   it("returns REJECTED packages that are too bulky by side measurement and too heavy", () => {
     // too bulky on a side
     expect(sort(150, 2, 3, 22)).toBe("REJECTED");
-    expect(sort(149.1, 101, 68, 21)).toBe("REJECTED");
+    expect(sort(1, 200, 3, 22)).toBe("REJECTED");
   });
 
   it("returns REJECTED packages that are too bulky by volume and too heavy", () => {
